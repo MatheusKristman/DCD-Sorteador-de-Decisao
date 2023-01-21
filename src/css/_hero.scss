@@ -1,0 +1,107 @@
+.hero {
+  padding-top: 100px;
+  width: 100%;
+  flex: 1;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include breakpoint(smallScreen) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__info {
+      width: 100%;
+
+      .hero-title {
+        font-size: 2.5rem;
+        line-height: 50px;
+        margin-bottom: 15px;
+
+        @include breakpoint(smallScreen) {
+          max-width: 320px;
+        }
+
+        @include breakpoint(largeScreen) {
+          font-size: 4.375rem;
+          max-width: 590px;
+          line-height: 90px;
+        }
+
+        strong {
+          color: #FCE513;
+        }
+      }
+
+      .hero-desc {
+        font-size: 1rem;
+        margin-bottom: 25px;
+
+        @include breakpoint(smallScreen) {
+          max-width: 320px;
+        }
+
+        @include breakpoint(largeScreen) {
+          max-width: 590px;
+          font-size: 1.125rem;
+        }
+      }
+
+      .hero-btn {
+        padding: 15px 30px;
+        width: 100%;
+        border: none;
+        border-radius: 6px;
+        background-color: #FCE513;
+        font-size: 1.125rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        @include breakpoint(smallScreen) {
+          width: auto;
+        }
+
+        @include breakpoint(largeScreen) {
+          transition: filter 0.2s ease;
+
+          &:hover {
+            filter: brightness(90%);
+          }
+        }
+      }
+    }
+
+    &__image {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      pointer-events: none;
+
+      @include breakpoint(smallScreen) {
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+
+      .hero-image-box {
+        width: 100%;
+        max-width: 600px;
+        user-select: none;
+        pointer-events: none;
+
+        .hero-image {
+          width: 100%;
+          height: auto;
+          user-select: none;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

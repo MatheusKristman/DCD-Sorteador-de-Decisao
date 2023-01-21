@@ -1,0 +1,76 @@
+.about {
+  flex: 1;
+  padding-top: 100px;
+  width: 100%;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    @include breakpoint(smallScreen) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__info {
+      width: 100%;
+
+      .about-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 25px;
+
+        @include breakpoint(smallScreen) {
+          text-align: left;
+        }
+
+        @include breakpoint(largeScreen) {
+          font-size: 3.125rem;
+        }
+      }
+
+      .about-desc {
+        font-size: 1rem;
+        text-align: center;
+        max-width: 590px;
+
+        @include breakpoint(smallScreen) {
+          text-align: left;
+        }
+
+        @include breakpoint(largeScreen) {
+          font-size: 1.25rem;
+        }
+      }
+
+      .text-margin {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(smallScreen) {
+        justify-content: flex-end;
+      }
+
+      .about-image-box {
+        width: 100%;
+        max-width: 600px;
+
+        .about-image {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

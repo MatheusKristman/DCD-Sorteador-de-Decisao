@@ -1,0 +1,100 @@
+.footer {
+  width: 100%;
+  background-color: #FCE513;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 150px;
+  
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+
+    @include breakpoint(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &::before {
+      content: '';
+      background-image: url('../assets/footer-finger.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 87px;
+      height: 87px; 
+      position: absolute;
+      bottom: calc(100% + 20px);
+      left: 25px;
+
+      @include breakpoint(tablet) {
+        left: 60px;
+      }
+
+      @include breakpoint(largeScreen) {
+        left: 120px;
+      }
+    }
+
+    &__dev-logo {
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #000;
+        text-decoration: none;
+        font-size: 0.9rem;
+
+        @include breakpoint(largeScreen) {
+          transition: opacity 0.2s ease;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        &::after {
+          content: '';
+          background-image: url('../assets/mk-logo.svg');
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 25px;
+          width: 60px;
+        }
+      }
+    }
+
+    &__dev-socials {
+      .dev-socials-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+
+        li .linkedin,
+        li .instagram,
+        li .github {
+          font-size: 1.5rem;
+          color: #000;
+          cursor: pointer;
+
+          @include breakpoint(smallScreen) {
+            font-size: 2rem;
+          }
+
+          @include breakpoint(largeScreen) {
+            transition: opacity 0.2s ease;
+
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
