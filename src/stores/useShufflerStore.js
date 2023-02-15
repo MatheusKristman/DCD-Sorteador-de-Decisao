@@ -2,6 +2,7 @@ import create from 'zustand';
 
 const useShufflerStore = create((set) => ({
   values: [],
+  resetValues: () => set(() => ({ values: [] })),
   inputValue: '',
   handleInputValue: (e) => set(() => {
     return { inputValue: e.target.value }
@@ -22,7 +23,6 @@ const useShufflerStore = create((set) => ({
   }),
   editable: (index) => set((state) => {
     const newArr = [...state.values];
-    const val = newArr[index].value;
     newArr[index].isEditable = true;
     return { values: newArr }
   }),
@@ -41,9 +41,15 @@ const useShufflerStore = create((set) => ({
   }),
   deleteChoice: (index) => set((state) => {
     const newValues = [ ...state.values ];
-    newValues.filter((choice) => choice.value !== state.values[index].value);
-    return { values: newValues };
+    return { values: newValues.filter((choice) => choice.value !== state.values[index].value) };
   }),
+  isShuffling: false,
+  handleShuffle: () => set((state) => ({ isShuffling: !state.isShuffling })),
+  isShuffleLoading: false,
+  loading: () => set((state) => ({ isShuffleLoading: true })),
+  notLoading: () => set((state) => ({ isShuffleLoading: false })),
+  result: '',
+  updateResult: (value) => set(() => ({ result: value })),
 }));
 
 export default useShufflerStore;
