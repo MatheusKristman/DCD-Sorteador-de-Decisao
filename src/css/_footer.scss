@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  background-color: #FCE513;
+  background-color: $yellow;
   padding-top: 25px;
   padding-bottom: 25px;
   margin-top: 150px;
@@ -97,4 +97,14 @@
       }
     }
   }
+
+  .no-before {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.no-icon {
+  margin-top: 0;
 }

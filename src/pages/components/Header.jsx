@@ -1,23 +1,46 @@
-import React, { useState } from 'react';
+import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useStore from '../../stores/useStore';
 
 import Logo from '../../assets/logo.svg';
 
 const Header = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const isNavOpen = useStore((state) => state.isNavOpen);
+  const openNav = useStore((state) => state.openNav);
+  const closeNav = useStore((state) => state.closeNav);
 
-  function handleNav() {
-    setIsNavOpen((prev) => !prev);
-  }
+  const handleNav = useCallback(() => {
+    if (isNavOpen) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  }, [isNavOpen]);
 
   const navigate = useNavigate();
 
   function navigateToHome() {
     navigate('/');
+
+    setTimeout(() => {
+      closeNav();
+    }, 100);
   }
 
   function navigateToAbout() {
     navigate('/about');
+
+    setTimeout(() => {
+      closeNav();
+    }, 100);
+  }
+
+  function navigateToShuffler() {
+    navigate('/shuffler');
+
+    setTimeout(() => {
+      closeNav();
+    }, 100);
   }
 
   return (
@@ -41,7 +64,7 @@ const Header = () => {
           <ul className={isNavOpen ? 'nav-links nav-links-active' : 'nav-links'}>
             <li className='nav-link' onClick={navigateToHome}>Início</li>
             <li className='nav-link' onClick={navigateToAbout}>Sobre</li>
-            <li className='nav-link'>Decida-se</li>
+            <li className='nav-link' onClick={navigateToShuffler}>Decida-se</li>
           </ul>
         </nav>
       </div>

@@ -48,7 +48,7 @@
         position: absolute;
         right: 0;
         top: -200px;
-        background-color: #FCE513;
+        background-color: $yellow;
         padding: 15px 30px;
         list-style: none;
         display: flex;
@@ -81,10 +81,9 @@
             font-size: 1.25rem;
 
             &:last-child {
-              background-color: #FCE513;
+              background-color: $yellow;
               padding: 10px 20px;
               border-radius: 8px;
-              font-size: 1.375rem;
               font-weight: 600;
             }
           }

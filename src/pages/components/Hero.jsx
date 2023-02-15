@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import HeroImage from '../../assets/home-image.png';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  function navigateToShuffler() {
+    navigate('/shuffler');
+  }
+
   return (
     <main className='hero wrapper'>
       <div className='hero__container'>
@@ -14,7 +21,7 @@ const Hero = () => {
             escolha.
           </p>
 
-          <button type='button' className='hero-btn'>Começar</button>
+          <button type='button' className='hero-btn' onClick={navigateToShuffler}>Começar</button>
         </div>
 
         <div className='hero__container__image'>

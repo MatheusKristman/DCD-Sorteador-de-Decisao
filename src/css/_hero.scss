@@ -34,7 +34,7 @@
         }
 
         strong {
-          color: #FCE513;
+          color: $yellow;
         }
       }
 
@@ -57,7 +57,7 @@
         width: 100%;
         border: none;
         border-radius: 6px;
-        background-color: #FCE513;
+        background-color: $yellow;
         font-size: 1.125rem;
         font-weight: 600;
         cursor: pointer;
