@@ -498,9 +498,9 @@ body {
 }
 .shuffler__container__input-box__input {
   outline: none;
-  border: 2px solid #ECECEC;
+  border: 2px solid #ececec;
   border-right: none;
-  background-color: #ECECEC;
+  background-color: #ececec;
   border-radius: 6px 0 0 6px;
   height: 35px;
   padding: 0 10px;
@@ -519,7 +519,7 @@ body {
   outline: none;
   border: 2px solid #000;
   background-color: #000;
-  color: #FFF;
+  color: #fff;
   border-radius: 0 6px 6px 0;
   font-size: 0.9rem;
   cursor: pointer;
@@ -639,6 +639,16 @@ body {
 }
 .shuffler__container__choices-container__box__choice__value::placeholder {
   color: #ececec;
+}
+.shuffler__container__choices-container__box__tip-empty {
+  font-size: 1.5rem;
+  color: #4a4d57;
+  text-align: center;
+}
+@media screen and (min-width: 500px) {
+  .shuffler__container__choices-container__box__tip-empty {
+    font-size: 2.5rem;
+  }
 }
 .shuffler__container__choices-container__btn {
   width: 90%;
